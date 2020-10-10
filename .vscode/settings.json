@@ -1,0 +1,17 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "standard",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "xelatex",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "convert",
+      "tools": ["latexmk-convert"]
+    }
+  ],
+  "latex-workshop.latex.outDir": "%DIR%/build"
+}

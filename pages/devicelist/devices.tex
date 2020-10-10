@@ -1,0 +1,41 @@
+\newenvironment{device}[1]{\begin{table}[ht]\textbf{#1}\p\begin{tabular}{p{3cm}|l}}{\end{tabular}\end{table}}
+
+\newcommand{\labornetzteil}[1][434391]{
+    \begin{device}{Labornetzteil}
+        Hersteller&Aim-tti\\
+        Modellbezeichnung&PL303QMD\\
+        Seriennummer&#1\\
+        Verwendung&Spannungs-/Stromversorgung der Aufbauten
+    \end{device}
+    \vspace{6pt}
+}
+
+\newcommand{\tischmultimeter}[1][MY56130055]{
+    \begin{device}{Tischmultimeter}
+        Hersteller&Keysight\\
+        Modellbezeichnung&34450A\\
+        Seriennummer&#1\\
+        Verwendung&Strommessung
+    \end{device}
+    \vspace{6pt}
+}
+
+\newcommand{\handmultimeter}[1][MY56050173]{
+    \begin{device}{Handmultimeter}
+        Hersteller&Keysight\\
+        Modellbezeichnung&U1233A\\
+        Seriennummer&#1\\
+        Verwendung&Spannungsmessung
+    \end{device}
+    \vspace{6pt}
+}
+
+\newcommand{\frequenzgennerator}[1][MY52302990]{
+    \begin{device}{Waveform Generator}
+        Hersteller&Keysight\\
+        Modellbezeichnung&33500B\\
+        Seriennummer&#1\\
+        Verwendung&Frequenz gennerieren
+    \end{device}
+    \vspace{6pt}
+}
