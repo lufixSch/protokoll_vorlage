@@ -1,6 +1,6 @@
 \newenvironment{device}[1]{\begin{table}[ht]\textbf{#1}\p\begin{tabular}{p{3cm}|l}}{\end{tabular}\end{table}}
 
-\newcommand{\labornetzteil}[1][434391]{
+\newcommand{\labornetzteil}[1][434399]{
     \begin{device}{Labornetzteil}
         Hersteller&Aim-tti\\
         Modellbezeichnung&PL303QMD\\
@@ -10,7 +10,7 @@
     \vspace{6pt}
 }
 
-\newcommand{\tischmultimeter}[1][MY56130055]{
+\newcommand{\tischmultimeter}[1][MY53170067]{
     \begin{device}{Tischmultimeter}
         Hersteller&Keysight\\
         Modellbezeichnung&34450A\\
@@ -30,12 +30,22 @@
     \vspace{6pt}
 }
 
-\newcommand{\frequenzgennerator}[1][MY52302990]{
+\newcommand{\frequenzgennerator}[1][MY52302122]{
     \begin{device}{Waveform Generator}
         Hersteller&Keysight\\
         Modellbezeichnung&33500B\\
         Seriennummer&#1\\
         Verwendung&Frequenz gennerieren
+    \end{device}
+    \vspace{6pt}
+}
+
+\newcommand{\oszi}[1][MY55120189]{
+    \begin{device}{Oszilloskop}
+        Hersteller&Keysight\\
+        Modellbezeichnung&InfiniiVision\\
+        Seriennummer&#1\\
+        Verwendung&Spannungsmessung
     \end{device}
     \vspace{6pt}
 }
