@@ -1,4 +1,4 @@
-\newenvironment{device}[1]{\begin{table}[ht]\textbf{#1}\p\begin{tabular}{p{3cm}|l}}{\end{tabular}\end{table}}
+\newenvironment{device}[1]{\textbf{#1}\p\begin{tabular}{p{3cm}|l}}{\end{tabular}\vspace{12pt}\newline}
 
 \newcommand{\labornetzteil}[1][434399]{
     \begin{device}{Labornetzteil}
@@ -7,7 +7,6 @@
         Seriennummer&#1\\
         Verwendung&Spannungs-/Stromversorgung der Aufbauten
     \end{device}
-    \vspace{6pt}
 }
 
 \newcommand{\tischmultimeter}[1][MY53170067]{
@@ -17,7 +16,6 @@
         Seriennummer&#1\\
         Verwendung&Strommessung
     \end{device}
-    \vspace{6pt}
 }
 
 \newcommand{\handmultimeter}[1][MY56050173]{
@@ -27,7 +25,6 @@
         Seriennummer&#1\\
         Verwendung&Spannungsmessung
     \end{device}
-    \vspace{6pt}
 }
 
 \newcommand{\frequenzgennerator}[1][MY52302122]{
@@ -37,7 +34,6 @@
         Seriennummer&#1\\
         Verwendung&Frequenz gennerieren
     \end{device}
-    \vspace{6pt}
 }
 
 \newcommand{\oszi}[1][MY55120189]{
@@ -47,5 +43,4 @@
         Seriennummer&#1\\
         Verwendung&Spannungsmessung
     \end{device}
-    \vspace{6pt}
 }
