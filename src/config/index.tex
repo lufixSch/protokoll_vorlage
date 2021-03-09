@@ -1,0 +1,71 @@
+\input{src/config/imports.tex}
+
+\graphicspath{./assets/pictures/}
+
+%# Setup Counter ------------------------------------------------------------------------
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+\AtBeginDocument{\counterwithin{lstlisting}{section}}
+
+\captionsetup{font=small, labelfont=bf, labelformat=simple, justification=raggedright, singlelinecheck=false}
+
+%# Table Setup ------------------------------------------------------------------------
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+%# Colors ------------------------------------------------------------------------
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+\definecolor{DENcol}{RGB}{35,171,196} % Department Colour
+\definecolor{DENcol10}{RGB}{245, 245, 245}
+
+%# Setup Hyperlink ------------------------------------------------------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+}
+
+%# Setup Listing ------------------------------------------------------------------------
+\lstloadlanguages{Bash,VHDL,Matlab,[ANSI]C,Java,[LaTeX]TeX}
+
+\lstset{
+    frame=top,frame=bottom,
+    basicstyle=\fontsize{8}{8}\normalfont\sffamily,
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{DENcol},
+    stringstyle=\color{mPurple},            % the size of the fonts that are used for the code
+	stepnumber=1,                           % the step between two line-numbers. If it is 1 each line will be numbered
+	numbersep=6pt,                          % how far the line-numbers are from the code
+	tabsize=2,                              % tab size in blank spaces
+	extendedchars=true,                     %
+	breaklines=true,                        % sets automatic line breaking
+	captionpos=t,                           % sets the caption-position to top
+	mathescape=true,
+	stringstyle=\color{black}\ttfamily,     % Farbe der String
+	showspaces=false,                       % Leerzeichen anzeigen ?
+	showtabs=false,                         % Tabs anzeigen ?
+	xleftmargin=15pt,
+	framexleftmargin=14pt,
+	framexrightmargin=9pt,
+	framexbottommargin=9pt,
+	framextopmargin=9pt,
+	showstringspaces=false,      % Leerzeichen in Strings anzeigen ?
+	numbers = left,
+	linewidth = 150mm,
+	language=C
+}
+
+%\makeindex %create Index (Inhaltsangabe)
+%\pagestyle{fancy}
+
+\input{src/config/commands.tex}
