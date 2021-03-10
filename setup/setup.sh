@@ -5,6 +5,7 @@
 # $2 => Lecturename short
 # $3 => Protocolname
 # $4 => Protocolcount
+# $5 => Optional, Repository Link
 #****************************************
 
 DATE=`date +"%d.%m.%Y"`
@@ -23,4 +24,18 @@ cat > data.tex << EOF
 \newcommand{\finishedDate}{---}
 EOF
 
-echo "Protokoll $4 aus dem Fach $1 ($2) wurde mit dem Namen $3 initialisiert"
+echo "Protokoll $4 aus dem Fach $1 ($2) mit dem Namen $3 initialisiert"
+
+git remote rename origin vorlage
+git branch -m master vorlage-master
+
+if [ $5 ]; then
+  git remote add origin $5
+
+  git checkout -b master origin/master
+  git push
+else
+  echo "Keine neue remote Branch übergeben"
+fi
+
+echo "Repository strukturiert"
