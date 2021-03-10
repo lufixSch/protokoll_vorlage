@@ -12,7 +12,7 @@ DATE=`date +"%d.%m.%Y"`
 
 mv main.tex $2_lab$4_protokoll.tex
 
-cat > data.tex << EOF
+cat > params.tex << EOF
 \newcommand{\documenTitle}{Laborübung $4~-~$3}
 \newcommand{\firstStudent}{Lukas Schüttler}
 \newcommand{\secondStudent}{Tim Schmid}
