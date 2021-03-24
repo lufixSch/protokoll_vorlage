@@ -35,6 +35,7 @@ if [ $5 ]; then
   git checkout -b master origin/master
   git push
 else
+  git checkout -b master
   echo "Keine neue remote Branch übergeben"
 fi
 

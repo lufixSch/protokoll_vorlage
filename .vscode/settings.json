@@ -2,11 +2,11 @@
   "latex-workshop.latex.recipes": [
     {
       "name": "standard",
-      "tools": ["latexmk"]
+      "tools": ["xelatex"]
     },
     {
-      "name": "xelatex",
-      "tools": ["xelatex"]
+      "name": "latexmk",
+      "tools": ["latexmk"]
     },
     {
       "name": "convert",
