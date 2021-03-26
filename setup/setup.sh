@@ -8,29 +8,35 @@
 # $5 => Optional, Repository Link
 #****************************************
 
+read -p "Name der Vorlesung: " LV_NAME
+read -p "Abkürzung: " LV_SHORT
+read -p "Protokollname: " PROTOCOL
+read -p "Nummer des Protokolls: " PROT_COUNT
+read -p "Link zu neuem Repository: " REPO
+
 DATE=`date +"%d.%m.%Y"`
 
-mv main.tex $2_lab$4_protokoll.tex
+mv main.tex ${LV_SHORT}_lab${PROT_COUNT}_protokoll.tex
 
 cat > params.tex << EOF
-\newcommand{\documenTitle}{Laborübung $4~-~$3}
+\newcommand{\documenTitle}{Laborübung ${PROT_COUNT}~-~${PROTOCOL}}
 \newcommand{\firstStudent}{Lukas Schüttler}
 \newcommand{\secondStudent}{Tim Schmid}
 
-\newcommand{\lecture}{$1}
+\newcommand{\lecture}{${LV_NAME}}
 \newcommand{\semester}{4. Semester}
 
 \newcommand{\lectureDate}{$DATE}
 \newcommand{\finishedDate}{---}
 EOF
 
-echo "Protokoll $4 aus dem Fach $1 ($2) mit dem Namen $3 initialisiert"
+echo "Protokoll ${PROT_COUNT} aus dem Fach ${LV_NAME} (${LV_SHORT}) mit dem Namen ${PROTOCOL} initialisiert"
 
 git remote rename origin vorlage
 git branch -m master vorlage-master
 
-if [ $5 ]; then
-  git remote add origin $5
+if [ ${REPO} ]; then
+  git remote add origin ${REPO}
 
   git checkout -b master origin/master
   git push
