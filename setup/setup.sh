@@ -8,11 +8,36 @@
 # $5 => Optional, Repository Link
 #****************************************
 
-read -p "Name der Vorlesung: " LV_NAME
-read -p "Abkürzung: " LV_SHORT
-read -p "Protokollname: " PROTOCOL
-read -p "Nummer des Protokolls: " PROT_COUNT
-read -p "Link zu neuem Repository: " REPO
+if [ "$1" ]; then
+  LV_NAME=$1
+else
+  read -p "Name der Vorlesung: " LV_NAME
+fi
+
+if [ $2 ]; then
+  LV_SHORT=$2
+else
+  read -p "Abkürzung: " LV_SHORT
+fi
+
+if [ $3 ]; then
+  PROTOCOL=$3
+else
+  read -p "Protokollname: " PROTOCOL
+fi
+
+if [ $4 ]; then
+  PROT_COUNT=$4
+else
+  read -p "Nummer des Protokolls: " PROT_COUNT
+fi
+
+if [ $5 ]; then
+  REPO=$5
+else
+  read -p "Link zu neuem Repository: " REPO
+fi
+
 
 DATE=`date +"%d.%m.%Y"`
 
