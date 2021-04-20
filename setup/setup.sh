@@ -63,8 +63,8 @@ git branch -m master vorlage-master
 if [ ${REPO} ]; then
   git remote add origin ${REPO}
 
-  git checkout -b master origin/master
-  git push
+  git checkout -b master
+  git push --set-upstream origin master
 else
   git checkout -b master
   echo "Keine neue remote Branch übergeben"
