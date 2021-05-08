@@ -70,4 +70,14 @@ else
   echo "Keine neue remote Branch übergeben"
 fi
 
+read -p "Unterschriften laden (J/n): " SIGN
+
+if [ $SIGN == "J" ]; then
+  git submodule init
+  git submodule update
+
+  echo "Privates Submodule initialisiert"
+fi
+
+
 echo "Repository strukturiert"
