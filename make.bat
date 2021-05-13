@@ -23,7 +23,7 @@ goto end
 goto end
 
 :setup
-	.\setup\setup.bat
+	python3 setup\setuppy
 goto end
 
 :help

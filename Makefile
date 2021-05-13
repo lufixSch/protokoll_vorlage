@@ -28,4 +28,4 @@ push:
 
 # run setup script
 setup:
-	@./setup/setup.sh
+	@python3 ./setup/setup.py
