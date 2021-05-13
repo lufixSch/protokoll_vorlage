@@ -24,7 +24,7 @@ clean:
 # push to Bitbucket and GitHub
 push:
 	@git push
-	@git push --mirror "git@github.com:lufixSch/protokoll_vorlage.git"
+	@git push "git@github.com:lufixSch/protokoll_vorlage.git"
 
 # run setup script
 setup:
