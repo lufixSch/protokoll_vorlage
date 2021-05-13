@@ -8,6 +8,8 @@
 # $5 => Optional, Repository Link
 #****************************************
 
+
+# get setup configuration
 if [ "$1" ]; then
   LV_NAME=$1
 else
@@ -38,11 +40,16 @@ else
   read -p "Link zu neuem Repository: " REPO
 fi
 
+# rename main.text and update filename in Makefile
+FILENAME=`${LV_SHORT}_lab${PROT_COUNT}_protokoll.tex`
 
+mv main.tex ${FILENAME}
+sed -i '' 's/%ENTRYPOINT%/.\/main.tex/g' Makefile
+
+# create date
 DATE=`date +"%d.%m.%Y"`
 
-mv main.tex ${LV_SHORT}_lab${PROT_COUNT}_protokoll.tex
-
+# update params.tex
 cat > params.tex << EOF
 \newcommand{\documenTitle}{Laborübung ${PROT_COUNT}~-~${PROTOCOL}}
 \newcommand{\firstStudent}{Lukas Schüttler}
@@ -57,9 +64,11 @@ EOF
 
 echo "Protokoll ${PROT_COUNT} aus dem Fach ${LV_NAME} (${LV_SHORT}) mit dem Namen ${PROTOCOL} initialisiert"
 
+# setup git
 git remote rename origin vorlage
 git branch -m master vorlage-master
 
+# add new remote repository
 if [ ${REPO} ]; then
   git remote add origin ${REPO}
 
@@ -70,6 +79,7 @@ else
   echo "Keine neue remote Branch übergeben"
 fi
 
+# initialize private sign repository
 read -p "Unterschriften laden (J/n): " SIGN
 
 if [ $SIGN == "J" ]; then
