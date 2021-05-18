@@ -61,7 +61,7 @@ print(f'Protocol {args["count"]} from the '
       f'with the name {args["name"]} initialized')
 
 sp.call('git remote rename origin vorlage', shell=True)
-sp.call('git branch - m master vorlage-master', shell=True)
+sp.call('git branch -m master vorlage-master', shell=True)
 
 if args['repo']:
     sp.call(f'git remote add origin {args["repo"]}', shell=True)

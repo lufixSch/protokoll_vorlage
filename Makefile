@@ -27,5 +27,5 @@ push:
 	@git push "git@github.com:lufixSch/protokoll_vorlage.git"
 
 # run setup script
-setup:
+init:
 	@python3 ./setup/setup.py
