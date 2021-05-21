@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line, and also
 # from the environment.
-OUTDIR      	?= ./build
+OUTDIR      	?= build
 DOC						?= %ENTRYPOINT%
 
 # Put it first so that "make" without argument is like "make help".

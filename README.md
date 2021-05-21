@@ -4,11 +4,9 @@ Template for lab protocols. Especially at the FH-JOANNEUM.
 
 ## Setup
 
-To setup this template for a protocol you can use the shell script `./setup/setup.sh`. This script will ask you for name, subject, a new repository to connect to etc. All parameters are optional.
+To setup this template for a protocol you can use the python script `./setup/setup.py`. This script will ask you for name, subject, a new repository to connect to etc. All parameters are optional. You can run this script directly or with `make init`
 
-At the moment there is only a setup script for unix. If you how to write a similar script for windows I would be really happy about your contribution.
-
-The template works best when working in Visual Studio Code with the [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
+The template works best when working in Visual Studio Code with the [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension. Alternatively you can use the makefile to create the pdf (`make pdf`).
 
 ## Structure
 
