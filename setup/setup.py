@@ -56,6 +56,11 @@ params = open(_params_file, 'w')
 params.write(params_str)
 params.close()
 
+makefile = open(r'Makefile', 'w')
+content = makefile.read()
+makefile.write(content.replace(r"%ENTRYPOINT%", filename))
+
+
 print(f'Protocol {args["count"]} from the '
       f'lecture {args["lecture"]} ({args["lecture_short"]}) '
       f'with the name {args["name"]} initialized')
