@@ -31,4 +31,4 @@ pull-github:
 
 # run setup script
 init:
-	@/usr/bin/env python ./setup/setup.py
+	@/usr/bin/env python3 ./setup/setup.py
