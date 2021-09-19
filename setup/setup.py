@@ -12,16 +12,19 @@ import argparse
 import os
 import subprocess as sp
 import datetime
+import requests
 
 _main_file = r'main.tex'
 _params_file = r'params.tex'
+_assets = os.path.join('src', 'assets', 'privat')
 
 arg_def = {
     "lecture": ("-l", "--lecture", "name of the lecture"),
     "lecture_short": ("-ls", "--lecture-short", "short form of the lecture"),
     "name": ("-n", "--name", "name of the protocol"),
     "count": ("-c", "--count", "number of the protocol"),
-    "repo": ("-r", "--repo", "link to a repository"),
+    "repo": ("-r", "--repo", "link to a repository (Optional)"),
+    "token": ("-t", "--token", "token for private images (Optional)")
 }
 
 parser = argparse.ArgumentParser()
@@ -86,9 +89,18 @@ else:
 load_sign = input('Load private signatures (Y/n): ')
 
 if load_sign == "Y":
-    sp.call('git submodule init', shell=True)
-    sp.call('git submodule update', shell=True)
+    tokens = args['token'].split('#')
 
-    print('private submodule initialized')
+    sign_ls = requests.get(
+        f'https://firebasestorage.googleapis.com/v0/b/lufixsch-cdn.appspot.com/o/unterschriften%2Fsign_ls.png?alt=media&token={tokens[0]}').content
+    with open(os.path.join(_assets, 'sign_ls.png'), 'wb') as handler:
+        handler.write(sign_ls)
+
+    sign_ts = requests.get(
+        f'https://firebasestorage.googleapis.com/v0/b/lufixsch-cdn.appspot.com/o/unterschriften%2Fsign_ts.png?alt=media&token={tokens[1]}').content
+    with open(os.path.join(_assets, 'sign_ts.png'), 'wb') as handler:
+        handler.write(sign_ts)
+
+    print('private pictures loaded')
 
 print('repository structured')
